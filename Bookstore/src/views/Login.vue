@@ -33,10 +33,9 @@
                 valid: true,
                 email: 'henny@example.org',
                 emailRules: [
-  v => !!v || 'E-mail is required',
-  v => /([a-zA-Z0-9_]{1,})(@)([a-zA-Z0-9_]{2,}).([a-zA-Z0-9_]{2,})+/.test(v) || 'E-mail must be valid'
-],
-
+                v => !!v || 'E-mail is required',
+                v => /([a-zA-Z0-9_]{1,})(@)([a-zA-Z0-9_]{2,}).([a-zA-Z0-9_]{2,})+/.test(v) || 'E-mail must be valid'
+                ],
                 showPassword: false,
                 password: '',
                 passwordRules: [
@@ -48,6 +47,7 @@
         computed: {
       ...mapGetters({
         user: 'auth/user',
+        prevUrl: 'prevUrl',
       }),
     },
     methods: {
@@ -76,7 +76,8 @@
                   text: 'Login Success',
                   type: 'success',
                 });
-                this.setStatusDialog(false);
+                if(this.prevUrl.length>0) this.$router.push(this.prevUrl)
+                  this.close()
               } else {
                 this.setAlert({
                   status: true,

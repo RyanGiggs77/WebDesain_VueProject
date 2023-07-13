@@ -134,10 +134,10 @@
               this.setSideBar(false)
             })
             .catch((error)=> {
-              let response = error.response
+              let responses = error.response
               this.setAlert({
                 status: true,
-                text : response.data.message,
+                text : responses.data.message,
                 type : 'error',
               })
             })
