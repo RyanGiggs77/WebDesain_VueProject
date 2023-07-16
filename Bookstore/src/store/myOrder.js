@@ -1,4 +1,3 @@
-// store/myOrder.js
 export default {
     namespaced: true,
     state: {

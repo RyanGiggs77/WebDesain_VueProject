@@ -157,7 +157,6 @@ export default {
     }),
     saveShipping() {
       if (!this.user.api_token) {
-        // Handle the case when the user is not logged in
         this.setAlert({
           status: true,
           text: 'Please log in to save the shipping address.',

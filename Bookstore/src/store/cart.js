@@ -1,4 +1,3 @@
-// store/cart.js
 export default {
   namespaced: true,
   state: {
@@ -13,7 +12,7 @@ export default {
         price: payload.price,
         weight: payload.weight,
         quantity: 1,
-        stock: payload.stock, // Menambahkan properti stock ke keranjang
+        stock: payload.stock, 
       });
     },
     update: (state, payload) => {
@@ -25,7 +24,7 @@ export default {
         price: payload.price,
         weight: payload.weight,
         quantity: payload.quantity,
-        stock: payload.stock, // Menambahkan properti stock ke keranjang
+        stock: payload.stock, 
       });
       if (payload.quantity <= 0) {
         state.carts.splice(idx, 1);
